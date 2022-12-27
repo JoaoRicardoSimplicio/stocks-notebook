@@ -20,7 +20,7 @@ func transformRecordsInStockOrders(records *[]string) []*StockOrder {
 	var stockOrders []*StockOrder
 
 	for _, record := range *records {
-		recordItems := strings.Split(record, ",")
+		recordItems := strings.Split(record, ";")
 		date, _ := time.Parse(DATEFORMAT, recordItems[0])
 		amount, _ := strconv.Atoi(recordItems[3])
 		price, _ := strconv.ParseFloat(recordItems[4], 64)

@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-const HEAD string = "DATE,CODE,ACTION,AMOUNT,PRICE,EXTRA"
+const HEAD string = "DATE;CODE;ACTION;AMOUNT;PRICE;EXTRA"
 
 func ReadLinesFromFile(filepath string) []string {
 	var lines []string

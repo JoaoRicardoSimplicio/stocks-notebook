@@ -1,6 +1,6 @@
 package notebook
 
-const FILEPATH string = "./notebook.txt"
+var FILEPATH = getenv("FILEPATH", "notebook.txt")
 
 func GetStockOrders() []*StockOrder {
 	linesOfFile := ReadLinesFromFile(FILEPATH)
