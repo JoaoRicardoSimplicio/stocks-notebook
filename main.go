@@ -9,7 +9,13 @@ import (
 func main() {
 	stocksOrdersGroupedByStockCode := notebook.GetStockOrdersGroupedByStockCode()
 	for code, stockOrders := range stocksOrdersGroupedByStockCode {
-		result := calculator.CalculateStocksStats(code, stockOrders)
-		fmt.Println(result)
+		stockStats := calculator.CalculateStocksStats(code, stockOrders)
+		fmt.Printf(
+			"Stock Code: %s\nAvarage Price: %.3f\nTotal Cost Price: %.3f\nTotal Amount: %d\n\n",
+			stockStats.Code,
+			stockStats.AvaragePrice,
+			stockStats.TotalCostPrice,
+			stockStats.TotalAmount,
+		)
 	}
 }
