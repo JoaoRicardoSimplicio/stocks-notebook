@@ -32,7 +32,9 @@ func CalculateStocksStats(stockCode string, stockOrders []*notebook.StockOrder) 
 			calculateStockOrderSell(stockOrder, &stockStats)
 		}
 	}
-	stockStats.AvaragePrice = stockStats.TotalCostPrice / float64(stockStats.TotalAmount)
+	if stockStats.TotalAmount > 0 {
+		stockStats.AvaragePrice = stockStats.TotalCostPrice / float64(stockStats.TotalAmount)
+	}
 
 	return stockStats
 }
